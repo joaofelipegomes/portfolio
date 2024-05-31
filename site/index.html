@@ -1,37 +1,109 @@
 <!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>NGINX on Railway</title>
-    <meta name="description" content="Choo Choo!" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>JOÃO GOMES</title>
+  <link href="./src/css/dist.css" rel="stylesheet" />
+</head>
 
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<body class="bg-primary-white dark:bg-primary-black">
+  <main class=" w-full min-h-screen bg-primary-white dark:bg-primary-black flex flex-col sm:grid sm:grid-cols-2 p-6
+  gap-6 relative">
+    <div class="fixed bottom-0 left-0 w-full p-6 z-50">
+      <div
+        class="bg-primary-white dark:bg-primary-black border text-primary-dark dark:text-primary-white border-secondary-green py-3 px-4 flex gap-3 sm:gap-6 sm:flex-row flex-col text-xs sm:text-sm sm:justify-between items-center font-thin">
+        <div>
+          By clicking ‘AGREE’ you are agree to the use of cookies while using this website. The site may use cookies to
+          provide you with a great experience and to help the website run effectively.
+        </div>
+        <div class="flex sm:w-auto w-full sm:justify-normal justify-start">
+          <button onclick="this.parentElement.parentElement.remove()"
+            class="bg-secondary-green hover:opacity-80 py-1 px-3 text-primary-white transition-all">
+            AGREE
+          </button>
+        </div>
+      </div>
+    </div>
 
-    <link rel="stylesheet" href="/styles.css?v=1.0" />
-  </head>
+    <div class="text-secondary-green flex flex-col gap-8 sm:gap-6 z-40 relative">
+      <div class="absolute w-full h-full flex justify-center items-center">
+        <div id="move"
+          class="fixed flex items-center justify-center bg-secondary-green rounded-full blur-3xl opacity-0 sm:opacity-80 select-none z-0"
+          style="transform: translate(-50%, -50%); width: 240px; height: 240px;">
+        </div>
+      </div>
 
-  <body>
-    <main>
-      <img
-        src="https://railway.app/brand/logo-light.svg"
-        alt="Railway logo"
-        class="logo"
-      />
+      <div class="font-thin flex justify-between">
+        <div>
+          JOÃO GOMES
+        </div>
+        <div>
+          /developer, designer/
+        </div>
+      </div>
+      <div class="w-full h-full flex flex-col items-center text-4xl font-thin">
+        <div class="w-full opacity-30 sm:opacity-30">Swift</div>
+        <div class="w-full opacity-60 sm:opacity-40">JavaScript</div>
+        <div class="w-full opacity-100 sm:opacity-50">MongoDB</div>
+        <div class="w-full opacity-60 sm:opacity-60">PostgreSQL</div>
+        <div class="w-full opacity-30 sm:opacity-70">MySQL</div>
+        <div class="w-full sm:opacity-80 hidden sm:block">PHP</div>
+        <div class="w-full sm:opacity-90 hidden sm:block">Laravel</div>
+        <div class="w-full sm:opacity-100 hidden sm:block">ReactJS</div>
+        <div class="w-full sm:opacity-90 hidden sm:block">ElectronJS</div>
+        <div class="w-full sm:opacity-80 hidden sm:block">NodeJS</div>
+        <div class="w-full sm:opacity-70 hidden sm:block">TypeScript</div>
+        <div class="w-full sm:opacity-60 hidden sm:block">TailwindCSS</div>
+        <div class="w-full sm:opacity-50 hidden sm:block">Git</div>
+        <div class="w-full sm:opacity-40 hidden sm:block">Java</div>
+        <div class="w-full sm:opacity-30 hidden sm:block">Photoshop</div>
+      </div>
+    </div>
+    <div class="text-secondary-green flex flex-col gap-6 sm:pt-0 pt-8 z-40">
+      <div class="font-thin">
+        MENU
+      </div>
+      <div class="flex flex-col border-y-2 border-secondary-green divide-y-2 divide-secondary-green">
+        <a href="#about"
+          class="text-6xl font-thin py-4 hover:pl-4 hover:bg-secondary-green hover:text-primary-white transition-all cursor-pointer">
+          ABOUT</a>
+        <div
+          class="text-6xl font-thin py-4 hover:pl-4 hover:bg-secondary-green hover:text-primary-white transition-all cursor-pointer">
+          PROJECTS</div>
+        <div
+          class="text-6xl font-thin py-4 hover:pl-4 hover:bg-secondary-green hover:text-primary-white transition-all cursor-pointer">
+          CODES</div>
+      </div>
+    </div>
+  </main>
+  <div id="about" class="bg-primary-white dark:bg-primary-black relative z-40">
+    <div class="border-t-2 border-secondary-green p-6 text-6xl font-thin text-secondary-green min-h-screen">
+      ABOUT
+    </div>
+  </div>
 
-      <h1>NGINX on Railway</h1>
+  <script>
+    let skills = [
+      'Photoshop',
+      'Illustrator',
+      'CorelDraw'
+    ]
 
-      <p>
-        Choo Choo! This is an example of an NGINX static site running on
-        Railway.
-        <a
-          href="https://github.com/railwayapp/starters/tree/master/examples/nginx"
-          >View source</a
-        >.
-      </p>
-    </main>
+    const move = document.getElementById("move");
 
-    <script src="/script.js"></script>
-  </body>
+    document.body.onpointermove = event => {
+      const { clientX, clientY } = event;
+
+      move.animate({
+        left: `${clientX}px`,
+        top: `${clientY}px`
+
+      }, { duration: 1000, fill: "forwards" })
+
+    }
+  </script>
+</body>
+
 </html>
